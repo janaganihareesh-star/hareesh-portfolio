@@ -1,0 +1,76 @@
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-glow);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* Base styles for sections */
+section {
+  position: relative;
+  z-index: 10;
+}
+
+/* Global utility classes for OS theme */
+.section-title-wrapper {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent-primary);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  display: inline-block;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+  /* Force remove any glitch or text-shadow effects */
+  text-shadow: none !important;
+  color: var(--text-primary) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.section-title::before, .section-title::after {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
